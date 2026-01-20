@@ -1,0 +1,151 @@
+3. Register content of Capstone Project 
+(*) 3.1. Capstone Project name: 
+English:  Admission Consulting Platform for Private High Schools in Ho Chi Minh City 
+Vietnamese: Nền tảng tư vấn tuyển sinh vào Trường Trung Học Phổ Thông Tư Thục tại TPHCM
+Abbreviation: EduBridgeHCM
+Context: 
+The transition from secondary school to high school in Ho Chi Minh City is one of the most competitive and stressful admission processes for pupils and parents. Each year, more than 76,000  pupils participate in the Grade-10 entrance examination, yet the information environment remains highly fragmented: 
+Information scattering & inconsistency: Details about schools, admission scores, historical benchmarks, consultation channels, and specialized programs are spread across social networks, unofficial forums, and school announcements, causing confusion for parents.
+Lack of personalized counseling: Pupils often choose schools without data-backed guidance. Many parents rely on subjective opinions instead of systematic analysis of academic performance, historical cut-off scores, or capability forecasting.
+Manual advisory processes: Current career/orientation counseling activities happen through offline events, phone calls, or message groups, making it difficult to track, manage, or evaluate the quality of consultation.
+Limited AI adoption: While AI can analyze learning data, predict admission probability, and recommend suitable schools, there is no unified system applying these technologies to Grade-10 admissions in HCM City.
+Given these challenges, the project “Admission Consulting Platform for Private High Schools in Ho Chi Minh City” is proposed as a centralized digital platform that:
+Connects parents, pupils, schools, and counselors on one unified system.
+Uses AI models to predict admission probabilities, recommend appropriate schools, and analyze each student’s profile.
+Standardizes and digitizes the admission consulting workflow from registration → counseling → tracking → evaluation.
+Provides verified school information to avoid misinformation circulating on social networks.
+Supports schools in managing recruitment sessions, receiving consultation requests, and interacting with parents.
+This system contributes to enhancing transparency, improving the quality of admission support, and reducing the burden on both families and educational institutions. 
+Proposed Solutions
+To address the above issues, the EduBridgeHCM platform introduces a multi-component digital ecosystem:
+• AI-Driven Counseling Engine
+Problem: Students lack personalized, data-based guidance.
+Solution:
+Use AI models to analyze students’ academic performance, exam preparation history, and previous cut-off scores.
+Predict the probability of acceptance into each school.
+Recommend Top 5 suitable schools based on capability, location, tuition budget, and study interests.
+• Verified Admission Information Hub
+Problem: Admission information online is inconsistent and unverified.
+Solution:
+A centralized database where schools submit official data: programs, requirements, cut-off scores, quotas, and tuition.
+Admin verifies and approves all content before publication.
+• Consultation Management System
+Problem: Consultation activities lack structure and tracking.
+Solution:
+Students/parents can book online counseling sessions with schools or certified counselors.
+Each session has logs, feedback, and assigned counselors.
+A history of counseling interactions is stored for further recommendations.
+• Multi-platform System Architecture
+Web Portal for Admin & Schools:Manages data, requests, counseling sessions, and analysis dashboards.
+Mobile App for Students & Parents:Allows registering for counseling, viewing recommendations, receiving notifications, and tracking admission readiness.
+• Analytics & Insights Dashboard
+For schools: Shows student demand, historical trends, and consultation statistics.
+For parents: Provides performance analytics, benchmarking, and readiness indicators.
+Functional requirement 
+Role: System Admin
+Responsible for operational control of the EduBridgeHCM platform.
+School Verification
+View schools requesting onboarding.
+Verify accreditation documents.
+Approve/Reject school accounts.
+User Management
+Manage Parents, Students, Counselor, and Schools.
+Restrict/Unrestricted accounts violating regulations.
+Content Management (CMS)
+Manage news, banners, admission announcements, and AI knowledge articles.
+Analytics Dashboard
+Total system visits and consultation registrations.
+Statistical charts of student demand by district.
+Revenue reports (if applicable including Business Package subscriptions).
+Role: School
+Schools manage counseling and admission information.
+School Profile Management
+Update official information, programs, facilities, and tuition.
+Admission & Counseling Management
+Create yearly admission campaigns.
+Publish expected cut-off scores and requirements.
+Role: Counselor
+Receive & Claim Leads: Receive consultation requests from the system as assigned or independently.
+Individual Interaction: Manage assigned parent lists. Chat, call, and schedule one-on-one appointments.
+Status Tracking: Update consultation progress for each parent (e.g., Consultation completed, Awaiting school visit, Enrollment confirmed).
+Role: Parent/Student
+End users who seek consultation.
+Search & Discovery:
+Search schools by: Ward, District
+AI Recommendations
+Input academic data → receive school matches.
+View acceptance probability charts.
+Counseling Services
+Chat online sessions with counselors.
+Rate counseling quality.
+Notification System
+Receive alerts on admission deadlines, cut-off updates, and exam preparation guidance.
+Non-Functional Requirements: 
+Usability / UX
+Simple, intuitive UI optimized for diverse technology backgrounds.
+Mobile-first design for parents/students.
+Clear Vietnamese language support.
+Security
+Verify account using OAuth2.0 (gmail)
+HTTPS for all communications.
+Strict RBAC (Admin / School / Counselor / Parent).
+Prevent common OWASP vulnerabilities; API rate limiting.
+Performance
+< 2s response time for major features.
+Scalable to peak seasons (e.g., > 1,000 concurrent users).
+Auto-compression for uploaded documents.
+Data Integrity
+Validation for all academic/consultation data.
+ACID transactions for session registration and updates.
+Audit logs for sensitive changes.
+Robustness
+Graceful error handling.
+99.9% uptime target.
+Daily backups and recovery strategy.
+Modifiability
+Clean Architecture, modular design.
+Configurable thresholds (AI model confidence, counseling fees, upload limits).
+Verifiability
+70% unit test coverage.
+Mapping functional requirements ↔ test cases.
+Interoperability
+Standard RESTful JSON APIs.
+Data import/export (CSV/Excel).
+Integration with VNPay, EmailJS, or AI model endpoints.
+ (*) 3.2. Main proposal content (including result and product)   
+Theory and practice (document):
+Students must apply:
+Software Development Life Cycle (SDLC)
+UML 2.0 modeling
+Clean Architecture principles
+Documents include:
+User Requirement Specification (URS)
+SRS Document
+Architecture & Detailed Design
+Implementation documents
+Test Cases & Test Report
+Deployment & Installation Guide
+Source code and deployable build files
+Technologies:
+Backend
+Java Spring Boot – REST APIs, authentication, business logic
+PostgreSQL – relational database
+AI services: Python-based microservice (FastAPI) for prediction models
+Deployment: Microsoft Azure
+Frontend
+Web Portal: ReactJS (Admin, School)
+Mobile App: React Native (Parents/Students)
+Deployment
+Render / Vercel (Frontend)
+Azure (Backend & AI services)
+Products: 
+Web Portal for Admin & Schools – Manages data, requests, counseling sessions, and analysis dashboards.
+Mobile App for Students & Parents – Allows registering for counseling, viewing recommendations, receiving notifications, and tracking admission readiness. 
+AI Prediction Service – Cut-off score forecasting & school recommendation engine.
+RESTful API Backend – Core connection of the entire platform.
+Proposed Tasks:
+Task Package 1: Database design, backend core APIs, authentication, AI service integration.
+Task Package 2: Admin & School Web Portal development.
+Task Package 3: Mobile App for parents/students.
+Task Package 4: AI model training (prediction & recommendation) and backend integration.
+Task Package 5: Deployment, testing, optimization, documentation.
