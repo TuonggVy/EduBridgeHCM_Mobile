@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   StatusBar,
   FlatList,
+  Image,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -54,6 +55,23 @@ export const HomeScreen = ({ navigation }: any) => {
 
 
       <ScrollView showsVerticalScrollIndicator={false}>
+        {/* Banner */}
+        <View style={styles.bannerContainer}>
+          <TouchableOpacity
+           activeOpacity={0.8}
+           onPress={() => {
+             console.log('Banner pressed');
+             // navigation.navigate('SomeScreen');
+           }}
+           >
+          <Image
+            source={require('../../assets/Banner_Mobile_02.png')}
+            style={styles.bannerImage}
+            resizeMode="cover"
+          />
+          </TouchableOpacity>
+        </View>
+
         {/* Quick Actions */}
         <View style={styles.quickActions}>
           <TouchableOpacity
@@ -200,6 +218,21 @@ const styles = StyleSheet.create({
     fontSize: 11,
     color: '#64748b',
     textAlign: 'center',
+  },
+  bannerContainer: {
+    marginHorizontal: 20,
+    marginTop: 16,
+    borderRadius: 12,
+    overflow: 'hidden',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
+  },
+  bannerImage: {
+    width: '100%',
+    height: 180,
   },
   section: {
     paddingHorizontal: 20,
